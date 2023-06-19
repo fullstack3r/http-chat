@@ -1,16 +1,10 @@
 import  express  from "express";
+import mensajesroutes from "./routes/mensajes.routes.js"
+
 const app = express();
 
-let message = [
-    "patatas",
-    "huevos",
-    "pan"
 
-]
-
-app.get("/mensaje",(req, res)=>{
-    res.send(message);
-})
+app.use("/mensaje", mensajesroutes);
 
 app.listen(3000, (()=>{
 
